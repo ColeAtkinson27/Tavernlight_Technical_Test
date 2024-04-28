@@ -1,0 +1,19 @@
+This file is for pieces of code to include in other scripts. Rather than including the entire script with
+only a small addition, this is where I will provide the additions, as well as where they should be inserted.
+
+//This block of code should be put in Server/data/spells/spells.xml file.
+//It defines everything about the spell on the server, such as which classes can cast it, the mana cost,
+//  and cooldown, but not the spell's implementation, which it links to at the end. The winter_storm.lua
+//  script should be put into Server/data/spells/scripts/attack.
+ 
+<instant group="attack" spellid="201" name="Winter Storm" words="frigo" lvl="60" mana="10" selftarget="1" cooldown="1000" groupcooldown="1000" needlearn="0" script="attack/winter_storm.lua">
+  <vocation name="Sorcerer" />
+</instant>
+
+//This line of code should be put into the client's modules/game_spelllist/spelllist.lua script in the
+//  SpellInfo table. Additionally, 'Winter Storm' should be included somewhere in the spellOrder table.
+//This defines the information to be displayed to the player in their spell list. Any changes made here will
+//  only affect the display to the player's UI, and not to the actual spell itself. To change the spell's variables,
+//  such as mana use or trigger word, that is handled in the block of code above.
+
+['Winter Storm'] = {id = 201, words = 'frigo', exhaustion = 40000, premium = false, type = 'Instant', icon = 'eternalwinter', mana = 10, level = 60, soul = 0, group = {[1] = 4000}, vocations = {1}},
