@@ -1,0 +1,8 @@
+Module
+  name: window_jumping
+  description: Opens a window with a moving button.
+  author: Cole Atkinson
+  sandboxed: true
+  scripts: [ jump_window.lua ]
+  @onLoad: init()
+  @onUnload: terminate()

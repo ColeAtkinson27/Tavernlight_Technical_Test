@@ -1,0 +1,1 @@
+To use the scripts, place the window_jumping folder into the client's modules folder.

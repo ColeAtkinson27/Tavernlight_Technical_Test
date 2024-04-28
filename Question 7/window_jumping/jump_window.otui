@@ -1,0 +1,22 @@
+MainWindow
+  id: jumpWindow
+  !text: tr('')
+  size: 550 400
+  @onEscape: toggle()
+
+  Button
+    id: movingButton
+    !text: tr('Jump')
+    width: 64
+    anchors.top: parent.top
+    anchors.right: parent.right
+    @onClick: returnButtonToRight()
+
+  Button
+    id: movingButton
+    !text: tr('Test')
+    width: 64
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    @onClick: scheduleMoveEvent()
+    
